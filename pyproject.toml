@@ -1,0 +1,35 @@
+[tool.poetry]
+authors = ["Your Name <you@example.com>"]
+description = ""
+license = "MIT"
+name = "fastapi-gino"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+# 3rd party
+asyncpg = "^0.21.0"
+fastapi = "^0.61.1"
+gino = {git = "https://github.com/python-gino/gino.git", rev = "8131fb0"}# 1.1.0-beta.1
+gino-sanic = {git = "https://github.com/python-gino/gino-sanic.git", rev = "7bc7e98"}# master
+gino-starlette = {git = "https://github.com/python-gino/gino-starlette.git", rev = "69115d7"}# master
+orjson = "^3.4.1"
+sanic = "^19.12.2"
+uvicorn = "^0.12.2"
+
+# migrate
+alembic = {version = "^1.4.3", optional = true}
+psycopg2-binary = {version = "^2.8.6", optional = true}
+
+[tool.poetry.extras]
+migrate = ["alembic", "psycopg2-binary"]
+
+[tool.poetry.dev-dependencies]
+black = "^20.8b1"
+flake8 = "^3.8.4"
+mypy = "^0.790"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
